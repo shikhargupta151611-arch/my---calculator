@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Calculator</title>
+    <style>
+        .calculator { width: 220px; padding: 15px; border: 2px solid #333; border-radius: 10px; text-align: center; }
+        input { width: 90%; height: 40px; margin-bottom: 10px; text-align: right; font-size: 18px; }
+        button { width: 45px; height: 45px; margin: 2px; font-size: 16px; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <input type="text" id="result" disabled style="width: 150px; height: 30px; margin-bottom: 10px;">
+
+<div class="calculator">
+    <input type="text" id="display" disabled>
     <br>
-    <button onclick="document.getElementById('result').value += '1'">1</button>
-    <button onclick="document.getElementById('result').value += '2'">2</button>
-    <button onclick="document.getElementById('result').value = eval(document.getElementById('result').value)">=</button>
+    <button onclick="val('7')">7</button> <button onclick="val('8')">8</button> <button onclick="val('9')">9</button> <button onclick="val('/')">/</button>
+    <br>
+    <button onclick="val('4')">4</button> <button onclick="val('5')">5</button> <button onclick="val('6')">6</button> <button onclick="val('*')">*</button>
+    <br>
+    <button onclick="val('1')">1</button> <button onclick="val('2')">2</button> <button onclick="val('3')">3</button> <button onclick="val('-')">-</button>
+    <br>
+    <button onclick="val('0')">0</button> <button onclick="clr()">C</button> <button onclick="calc()">=</button> <button onclick="val('+')">+</button>
+</div>
+
+<script>
+    function val(v) { document.getElementById('display').value += v; }
+    function clr() { document.getElementById('display').value = ''; }
+    function calc() { 
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value); 
+        } catch(e) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+</script>
+
 </body>
 </html>
