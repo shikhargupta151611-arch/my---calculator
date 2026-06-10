@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calculator</title>
+</head>
+<body>
+    <input type="text" id="result" disabled style="width: 150px; height: 30px; margin-bottom: 10px;">
+    <br>
+    <button onclick="document.getElementById('result').value += '1'">1</button>
+    <button onclick="document.getElementById('result').value += '2'">2</button>
+    <button onclick="document.getElementById('result').value = eval(document.getElementById('result').value)">=</button>
+</body>
+</html>
