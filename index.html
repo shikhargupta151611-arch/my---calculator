@@ -30,6 +30,25 @@
         } catch(e) {
             document.getElementById('display').value = 'Error';
         }
+        // Square Root Function
+function calculateSquareRoot() {
+    let display = document.getElementById('display');
+    try {
+        display.value = Math.sqrt(eval(display.value));
+    } catch (e) {
+        display.value = "Error";
+    }
+}
+
+// Power (Square) Function
+function calculatePower() {
+    let display = document.getElementById('display');
+    try {
+        display.value = Math.pow(eval(display.value), 2);
+    } catch (e) {
+        display.value = "Error";
+    }
+}
     }
 </script>
 
